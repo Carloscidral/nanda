@@ -3,82 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Link com Background Responsivo</title>
+    <title>Mensagem Romântica Especial</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
+            padding: 0;
+            font-family: 'Lora', serif; /* Default font for the body */
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background-color: #f0f0f0;
+            background-image: url('https://cdn.pixabay.com/photo/2017/02/24/00/13/heart-2093542_960_720.png');
+            background-color: white; /* Fallback background color */
+            background-size: auto;
+            background-position: top left;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: #fff; /* Default text color for contrast with the background */
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Text shadow for readability */
         }
 
-        .link-container {
-            width: 90%; /* Largura responsiva */
-            max-width: 600px; /* Largura máxima para telas maiores */
-            height: 250px; /* Altura fixa ou pode ser ajustada com padding-bottom para proporção */
-            background-image: url('https://cdn.pixabay.com/photo/2017/02/24/00/13/heart-2093542_1280.png'); /* Substitua pela URL da sua imagem */
-            background-size: cover; /* Faz a imagem cobrir todo o container */
-            background-position: center; /* Centraliza a imagem no container */
-            background-repeat: no-repeat; /* Evita a repetição da imagem */
-            display: flex; /* Para centralizar o conteúdo do link */
-            justify-content: center;
-            align-items: center;
+        .container {
+            background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent background for the text box */
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
             text-align: center;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            overflow: hidden; /* Garante que a imagem não vaze */
-            position: relative; /* Necessário para posicionar o link se ele for um bloco interno */
+            max-width: 80%; /* Responsive width */
+            width: 500px; /* Preferred width */
+            box-sizing: border-box; /* Includes padding and border in the total width */
         }
 
-        .link-container a {
-            display: block; /* Faz o link ocupar todo o container */
+        .message-title {
+            font-family: 'Playfair Display', serif; /* Romantic font for the title */
+            font-size: 3em;
+            margin-bottom: 20px;
+            color: #e91e63; /* Vibrant pink color for the title */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .editable-text {
             width: 100%;
-            height: 100%;
-            text-decoration: none; /* Remove sublinhado do link */
-            color: #ffffff; /* Cor do texto do link */
-            font-size: 2em; /* Tamanho da fonte do link */
-            font-weight: bold;
-            display: flex; /* Para centralizar o texto dentro do link */
-            justify-content: center;
-            align-items: center;
-            background-color: rgba(0, 0, 0, 0.3); /* Um leve overlay para melhorar a legibilidade do texto */
-            transition: background-color 0.3s ease; /* Efeito de transição ao passar o mouse */
+            min-height: 150px; /* Minimum height for the text area */
+            padding: 15px;
+            border: 2px solid #ff69b4; /* Pink border for the text box */
+            border-radius: 10px;
+            font-family: 'Lora', serif; /* Readable romantic font for the editable text */
+            font-size: 1.2em; /* Font size for the editable text */
+            color: #4a4a4a; /* Dark color for the editable text */
+            background-color: rgba(255, 255, 255, 0.9); /* Almost opaque background for the text box */
+            resize: vertical; /* Allows vertical resizing */
+            outline: none; /* Removes default focus outline */
+            box-sizing: border-box;
+            line-height: 1.5; /* Line spacing */
+            overflow-y: auto; /* Adds scroll if content is too large */
+            text-align: left; /* Aligns the editable text to the left for better readability */
         }
 
-        .link-container a:hover {
-            background-color: rgba(0, 0, 0, 0.5); /* Overlay mais escuro ao passar o mouse */
-        }
-
-        /* Media Queries para responsividade */
+        /* Media Queries for responsiveness */
         @media (max-width: 768px) {
-            .link-container {
-                height: 200px; /* Ajusta a altura para telas menores */
+            .container {
+                padding: 20px;
+                max-width: 90%;
             }
-            .link-container a {
-                font-size: 1.5em;
+            .message-title {
+                font-size: 2.5em;
+            }
+            .editable-text {
+                font-size: 1.1em;
+                min-height: 120px;
             }
         }
 
         @media (max-width: 480px) {
-            .link-container {
-                height: 150px; /* Ajusta a altura ainda mais para telas muito pequenas */
-                width: 95%;
+            .container {
+                padding: 15px;
+                max-width: 95%;
             }
-            .link-container a {
-                font-size: 1.2em;
+            .message-title {
+                font-size: 2em;
+            }
+            .editable-text {
+                font-size: 1em;
+                min-height: 100px;
             }
         }
     </style>
 </head>
 <body>
 
-    <div class="link-container">
-        <a href="https://www.google.com" target="_blank">
-            ESPECIALMENTE PARA FERNANDA<BR><BR>CLIQUE AQUI. 
-        </a>
+    <div class="container">
+        <h1 class="message-title">Para o Meu Amor...</h1>
+        <div class="editable-text" contenteditable="true">
+            Fernanda, nem tenho palavras para descrever o quanto você é importante e especial para mim. Me apaixonei por você desde a primeira vez que nos vimos no Bon Odori. No começo, achei que não daria certo, porque eu era muito inseguro e tinha medo de mandar mensagem e não conseguir manter o assunto. Mas algo em mim falava para eu arriscar, e que daria certo.
+
+            <br><br>
+            E olha só, deu certo! Nossas conversas fluíram tão naturalmente que parecia que já nos conhecíamos há anos. Depois de várias conversas, saímos juntos pela primeira vez, só nós dois. Assistimos "Coringa 2" — um filme horrível — mas sua companhia fez tudo ser ótimo e especial. Nos beijamos pela primeira vez nesse mesmo encontro; foi mágico, meu amor.
+
+            <br><br>
+            Depois de um tempo, você foi para minha casa e viajamos juntos para Vera Cruz. Foram as melhores férias da minha vida! Lembro da gente em Mar Grande, às 19h da noite, comendo pastel e sofrendo pela demora. Que saudade disso.
+
+            <br><br>
+            Infelizmente, terminamos por conta da interferência de pessoas externas no nosso relacionamento. Mas, felizmente, estamos juntos de novo, melhorando o que nos prejudicava e mudando um pelo outro. Não estamos da forma que queríamos, já que estou te vendo escondido dos meus pais, o que nos deixa mais distantes fisicamente. Mas a gente se mantém firme, porque tudo isso vai passar. É só uma fase, vamos superar juntos, pois nos amamos e é isso que importa.
+
+            <br><br>
+            Você vai ser uma grande cirurgiã, e sinto muito orgulho de você. Por ser essa pessoa inteligente, esforçada, proativa e única que você é. É a mulher da minha vida e a mais bonita que já vi.
+
+            <br><br>
+            Eu te amo muito, Fernanda Oliveira.
+            <br>
+            Com todo o meu carinho,
+            <br>
+            [Seu Nome]
+        </div>
     </div>
 
 </body>
